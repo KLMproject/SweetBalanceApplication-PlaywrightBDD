@@ -22,7 +22,7 @@ const __dirname = path.dirname(__filename);
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir,
+  testDir: testDir ,
  // testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
