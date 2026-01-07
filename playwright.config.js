@@ -2,8 +2,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 const testDir = defineBddConfig({
-  features: ['features/03-Login.feature'],
-  steps: 'steps/Login_SD.js',
+  features: ['features/**/*.feature'],
+  steps: 'steps/**/*.js',
   //tags: '@login and @onboarding and @e2e',
 });
 /**
@@ -22,10 +22,10 @@ const __dirname = path.dirname(__filename);
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir,
+  testDir: testDir ,
  // testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
