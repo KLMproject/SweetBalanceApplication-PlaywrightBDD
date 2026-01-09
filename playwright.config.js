@@ -3,7 +3,8 @@ import { defineConfig, devices } from '@playwright/test';
 import { defineBddConfig } from 'playwright-bdd';
 const testDir = defineBddConfig({
   features: ['features/**/*.feature'],
-  steps: 'steps/**/*.js',
+  steps: ['steps/**/*.js', 'fixtures/fixtures.js'],
+  
   //tags: '@login and @onboarding and @e2e',
 });
 /**

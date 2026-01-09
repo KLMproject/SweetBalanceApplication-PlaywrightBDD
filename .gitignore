@@ -10,4 +10,5 @@ node_modules/
 allure-results
 logging
 *.log
+Test-Data.xlsx
 

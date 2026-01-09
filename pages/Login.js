@@ -608,5 +608,9 @@ async clickonboard_continueBtn(){
   async bloodreportquestionpage(){
     await this.page.goto('https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/blood-report-question')
   }
+  //extra methods
+  async goto(){
+    await this.page.goto(process.env.APP_URL)
+  }
 
 }
