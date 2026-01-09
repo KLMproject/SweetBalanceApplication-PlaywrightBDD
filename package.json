@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "bdd:gen": "npx bddgen",
+    "test:homePageForFreeUser": "npx bddgen && npx playwright test features/homePageForFreeUser.feature",
+    "test:freeUser": "npx bddgen && npx playwright test --grep @freeUserr"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@cucumber/cucumber": "^12.5.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^25.0.3",
     "allure-playwright": "^3.4.3",
