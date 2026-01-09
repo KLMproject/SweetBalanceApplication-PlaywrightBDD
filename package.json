@@ -6,7 +6,10 @@
   "scripts": {
     "bdd:gen": "npx bddgen",
     "test:homePageForFreeUser": "npx bddgen && npx playwright test features/homePageForFreeUser.feature",
-    "test:freeUser": "npx bddgen && npx playwright test --grep @freeUserr"
+    "test:freeUser": "npx bddgen && npx playwright test --grep @freeUserr",
+    "test:subscription": "npx bddgen && npx playwright test --grep @subscription ",
+    "test:upgrade": "npx bddgen && npx playwright test --grep @payment ",
+    "test:premiumUser": "npx bddgen && npx playwright test --grep @premiumuser "
   },
   "keywords": [],
   "author": "",
