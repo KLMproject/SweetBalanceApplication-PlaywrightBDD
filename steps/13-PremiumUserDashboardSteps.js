@@ -361,7 +361,7 @@ Then('User should see  {string}  displaying value based on the logs', async ({},
   // From: features\PremiumUserDashBoard.feature:149:2
 });
 
-Given('User has not logged any exercise minutes for the current week', async ({}) => { 
+Given('User has not logged any exercise minutes for the current week', async ({page}) => { 
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
@@ -381,7 +381,7 @@ Then('User should see the {string} displaying {string} with subtitle {string}', 
   // From: features\PremiumUserDashBoard.feature:154:2
 });
 
-Given('User has logged exercise minutes for the week', async ({}) => {
+Given('User has logged exercise minutes for the week', async ({page}) => {
  lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
@@ -404,7 +404,7 @@ Then('User should see the {string} displaying number of minutes based on the ent
   // From: features\PremiumUserDashBoard.feature:159:2
 });
 
-Given('User has not logged any medication adherence for the current week', async ({}) => {
+Given('User has not logged any medication adherence for the current week', async ({page}) => {
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
@@ -424,7 +424,7 @@ Then('User should see {string} displaying {string} with subtitle {string}', asyn
   // From: features\PremiumUserDashBoard.feature:164:2
 });
 
-Given('User has logged medication adherence for the current week', async ({}) => {     
+Given('User has logged medication adherence for the current week', async ({page}) => {     
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
@@ -442,7 +442,7 @@ Then('User should see {string} displaying percentage value based on log', async 
   // From: features\PremiumUserDashBoard.feature:169:2
 });
 
-Given('User has not logged Carb goals for the week', async ({}) => {
+Given('User has not logged Carb goals for the week', async ({page}) => {
    lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
@@ -473,7 +473,7 @@ Then('User should see {string} displaying value based on the logs', async ({}, a
 
 //feature:Smart Insights Validation on Premium dashboard
 
-Given('User has health data for the last {int} days', async ({}, arg) => {
+Given('User has health data for the last {int} days', async ({page}, arg) => {
  lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
@@ -486,7 +486,7 @@ Given('User has health data for the last {int} days', async ({}, arg) => {
   // Step: Given User has health data for the last 7 days
   // From: features\PremiumUserDashBoard.feature:184:2
 });
-When ('the User navigates to dashboard page', async ({}) => {
+When ('the User navigates to dashboard page', async ({page}) => {
   await dash.navigateToDashboard();
 
   // Step: When User navigates to dashboard page
@@ -500,13 +500,13 @@ Then('User should see the title {string} in smart insights section', async ({}, 
 });
 
 Then('User should see the label {string} in smart insights section', async ({}, arg) => {
-  await dash. SmartDaysTextVerify();
+  await dash.SmartDaysTextVerify();
   // Step: Then User should see the label "last 7 days" in smart insights section      
   // From: features\PremiumUserDashBoard.feature:191:2
 });
 
 Then('User should see Titles {string},{string},{string}', async ({}, arg, arg1, arg2) => {
-  await dash.SmartInsightsLocatorVarify()
+  await dash.SmartInsightsLocatorVerify()
   // Step: Then User should see Titles " Target Achievement","Pattern detected","Suggestion"
   // From: features\PremiumUserDashBoard.feature:196:2
 });
@@ -518,12 +518,13 @@ Then('User should see the display of percentage of time the user was in the targ
 });
 
 Then('user should see  percentage of glucose value spike  with suggestion to improve', async ({}) => {
+ await dash.navigateToDashboard();
   await dash.PatternTextVerify()
   // Step: Then user should see  percentage of glucose value spike  with suggestion to improve
   // From: features\PremiumUserDashBoard.feature:206:2
 });
 Then('user should see a suggestion of activity  with the average expected glucose reduction from this activity', async ({}) => {
-  await dash. SuggestionTextVerify()
+  await dash.SuggestionTextVerify();
   // Step: Then user should see a suggestion of activity  with the average expected glucose reduction from this activity
   // From: features\PremiumUserDashBoard.feature:211:2
 });
