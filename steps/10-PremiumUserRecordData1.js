@@ -46,11 +46,7 @@ Then('User should see text field for blood glucose', async ({page}) => {
     expect(await premiumobj.getLevel());
 });
 
-//Then('User should see text {string}', async ({page}, arg) => {
- //   const premiumobj = new PremiumUser(page);
-  //  expect(await premiumobj.getLevel());
-  //  expect(await premiumobj.enterLevel());
-//});
+
 
 Then('User should see text {string} in glucose field', async ({page}, arg) => {
     const premiumobj = new PremiumUser(page);
