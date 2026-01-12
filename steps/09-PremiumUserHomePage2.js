@@ -24,9 +24,7 @@ When('User clicks meal section', async ({page}) => {
  //const loginobj= new Login(page);
   
  // await loginobj.typeEmail(process.env.VALID_EMAIL);
-  //await loginobj.pressButton();
-  //await loginobj.enterPassword(process.env.PASSWORD);
-  //await loginobj.pressSignIn();
+
   
 
 });
