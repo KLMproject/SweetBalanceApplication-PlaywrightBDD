@@ -37,7 +37,7 @@ export default defineConfig({
   reporter: [['html'],['allure-playwright']], 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless: false,
+    headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     /* Base URL to use in actions like `await page.goto('')`. */
