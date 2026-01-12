@@ -289,7 +289,7 @@ async selectPreviousDate() {
       async verifySelectedDate() 
       { 
         //await expect(this.page.getByRole('button', { name: /december/i })).toHaveValue(this.selectedDate);
-        const expectedDateText = 'January 8th, 2026';
+        const expectedDateText = 'January 11th, 2026';
         await expect(this.page.getByRole('button', { name: /January/i })) .toHaveText(new RegExp(expectedDateText, 'i'));
 
      }
