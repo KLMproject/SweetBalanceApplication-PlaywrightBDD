@@ -17,21 +17,14 @@ const reader = new ExcelReader();
         await lp.enterPassword(user.PASSWORD);
         await lp.clickSigninButton(); 
         
-  //const loginobj= new Login(page);
-    // await loginobj.launchApp();
-  // await loginobj.clickLogin();
-   // await this.page.goto('https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/');
-  // Assert that some unique element of the home page is visible
- // await expect(this.page.getByRole('navigation')).toBeVisible();
+  
 });
 
 When('User clicks meal section', async ({page}) => {
  //const loginobj= new Login(page);
   
  // await loginobj.typeEmail(process.env.VALID_EMAIL);
-  //await loginobj.pressButton();
-  //await loginobj.enterPassword(process.env.PASSWORD);
-  //await loginobj.pressSignIn();
+
   
 
 });

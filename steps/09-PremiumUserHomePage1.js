@@ -7,9 +7,7 @@ import { ExcelReader } from '../utils/excelreader.js';
  const { Given, When, Then } = createBdd();
 const reader = new ExcelReader();
  Given('User is in password auth page', async ({page}) => {
-  //const loginobj= new Login(page);
-// await loginobj.launchApp();
- // await loginobj.clickLogin();
+
    const lp = new loginpage(page);
     await lp.navigatetoapplicationpage(process.env.APP_URL);
     await lp.clickonloginlink();
@@ -19,16 +17,9 @@ const reader = new ExcelReader();
 });
 
 When('User clicks sign in after entering password', async ({page}) => {
- // const loginobj= new Login(page);
-  
- // await loginobj.typeEmail(process.env.VALID_EMAIL);
-  //await loginobj.pressButton();
- // await loginobj.enterPassword(process.env.PASSWORD);
-  //await loginobj.pressSignIn();
+ 
  const lp = new loginpage(page)
-  //  await lp.clickonloginlink();
-   // await lp.enteremail(user.VALID_EMAIL);
- // await lp.clickcontinuewithemailbutton();
+
  const user = await reader.getLogin();
  await lp.enterPassword(user.PASSWORD);
   await lp.clickSigninButton(); 

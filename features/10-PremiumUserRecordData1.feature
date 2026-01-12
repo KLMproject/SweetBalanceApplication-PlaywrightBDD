@@ -24,7 +24,7 @@ Then   User should see text field for blood glucose
 Scenario: Verify the placeholder input in blood glucose field
 Given  User navigates to home page
 When   User clicks Blood Glucose 
-Then   User should see text "Enter blood glucose level"
+Then   User should see text "Enter blood glucose level" in glucose field
 
 Scenario:Verify the text in the input field
 Given  User navigates to home page
