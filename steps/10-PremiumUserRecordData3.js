@@ -26,36 +26,55 @@ When('User clicks Medication', async ({page}) => {
 });
 
 
-Then('User should see the title {string}', async ({page}, arg) => {
-    const premiumobj = new PremiumUser3(page);
-    expect(await premiumobj.getTitle()).toBe(arg);
+//Then('User should see the title {string}', async ({page}, arg) => {
+ //   const premiumobj = new PremiumUser3(page);
+ //   expect(await premiumobj.getTitle()).toBe(arg);
+//});
+Then('User should see the title"Diabetes Medication Tracker" in medication form', async ({page}) => {
+ const premiumobj = new PremiumUser3(page);
+ expect(await premiumobj.getTitle()).toBe("Diabetes Medication Tracker");
 });
 
+Then('User should see the subtext"Keep track of your medications and never miss a dose" in medication form', async ({page}) => {
+ const premiumobj = new PremiumUser3(page);
+ expect(await premiumobj.getSubtext()).toBe("Keep track of your medications and never miss a dose");
+});
 
-Then('User should see the subtext {string}', async ({page}, arg) => {
+Then('User should see the heading"Your Medications" in medication form', async ({page}) => {
   const premiumobj = new PremiumUser3(page);
-  expect(await premiumobj.getSubtext()).toBe(arg);
+ expect(await premiumobj.getHeader3()).toBe("Your Medications");
+
 });
 
-Then('User should see the heading {string}', async ({page}, arg) => {
-    const premiumobj = new PremiumUser3(page);      
-    expect(await premiumobj.getHeader3()).toBe(arg);
+Then('User should see the flexHeading"Today\'s Medications" in medication form', async ({page}) => {
+  const premiumobj = new PremiumUser3(page);
+  expect(await premiumobj.getHeader4()).toBe("Today's Medications");
 });
 
-Then('User should see the flexHeading {string}', async ({page}, arg) => {
-   const premiumobj = new PremiumUser3(page);      
-   expect(await premiumobj.getHeader4()).toBe(arg);
+Then('User should see the message1"No medications added yet" in medication form', async ({page}) => {
+  const premiumobj = new PremiumUser3(page);
+  expect(await premiumobj.getHeader5()).toBe("No medications added yet");
 });
 
-Then('User should see the message1 {string}', async ({page}, arg) => {
-    const premiumobj = new PremiumUser3(page);  
-    expect(await premiumobj.header5.textContent()).toBe(arg);    
+Then('User should see the message2"Click the {string} button to get started" in medication form', async ({page}, arg) => {
+  const premiumobj = new PremiumUser3(page);
+  const expectedText = `Click the '${arg}' button to get started`;
+  expect(await premiumobj.addmed.textContent()).toBe(expectedText);
 });
 
-Then('User should see the message2 {string}', async ({page}, arg) => {
-    const premiumobj = new PremiumUser3(page);
-    expect(await premiumobj.addmed.textContent()).toBe(arg);
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Then('User should see valid date picker field with default value as today', async ({page}) => {

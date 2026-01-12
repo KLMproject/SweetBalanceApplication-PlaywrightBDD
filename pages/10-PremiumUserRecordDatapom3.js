@@ -6,7 +6,7 @@ export class PremiumUser3{
    
  this.medication=page.getByRole('button', { name: 'Medication' });
  this.medicationDropdown= page.locator('select').first();
-  this.header2= page.locator('h1');
+  this.header2= page.getByRole('heading', { name: 'Diabetes Medication Tracker', level: 1 })
   this.title=page.getByText('Keep track of your');
   this.header3= page.getByRole('heading', { name: 'Your Medications' });
   this.header4=page.getByRole('heading', { name: 'Today\'s Medications' });

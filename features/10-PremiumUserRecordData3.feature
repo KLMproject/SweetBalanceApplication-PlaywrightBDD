@@ -4,7 +4,7 @@ Background: User is in home page after logged  into app
 Scenario Outline:Verify Medication Form UI structure
 Given User is on home page
 When User clicks Medication 
-Then User should see the <elementType> "<expectedText>"
+Then User should see the <elementType>"<expectedText>" in medication form
 
 Examples:
 
