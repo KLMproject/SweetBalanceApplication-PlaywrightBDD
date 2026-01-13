@@ -1,5 +1,4 @@
 import { createBdd } from "playwright-bdd";
-//import { Login } from "../pom/launchpom.js";
 import { loginpage } from '../pages/Login.js'
 import { expect } from '@playwright/test';
 import { Premium2 } from "../pages/09-PremiumUserHomePagePom2.js";
@@ -13,12 +12,10 @@ Given('User logs in to home page', async ({page}) => {
 const lp = new loginpage(page);
           await lp.navigatetoapplicationpage(process.env.APP_URL);
           await lp.clickonloginlink();
-          const user = await reader.getLogin();
-          await lp.enteremail(user.VALID_EMAIL);
-          await lp.clickcontinuewithemailbutton();
-         
-          await lp.enterPassword(user.PASSWORD);
-          await lp.clickSigninButton(); 
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
 });
 
 When('User clicks Food Intake', async ({page}) => {

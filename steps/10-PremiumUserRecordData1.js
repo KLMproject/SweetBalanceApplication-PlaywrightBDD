@@ -12,12 +12,16 @@ import { ExcelReader } from '../utils/excelreader.js';
    const lp = new loginpage(page);
           await lp.navigatetoapplicationpage(process.env.APP_URL);
           await lp.clickonloginlink();
-          const user = await reader.getLogin();
+        /*  const user = await reader.getLogin();
           await lp.enteremail(user.VALID_EMAIL);
           await lp.clickcontinuewithemailbutton();
-         
           await lp.enterPassword(user.PASSWORD);
-          await lp.clickSigninButton(); 
+          await lp.clickSigninButton(); */
+
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
     });
 
  When('User clicks Blood Glucose', async ({page}) => {
@@ -235,12 +239,12 @@ Given('User is in physical activity', async ({page}) => {
    const lp = new loginpage(page);
           await lp.navigatetoapplicationpage(process.env.APP_URL);
           await lp.clickonloginlink();
-          const user = await reader.getLogin();
-          await lp.enteremail(user.VALID_EMAIL);
-          await lp.clickcontinuewithemailbutton();
-         
-          await lp.enterPassword(user.PASSWORD);
-          await lp.clickSigninButton(); 
+          
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
+
    const premiumobj = new PremiumUser(page); 
     await premiumobj.clickPhyactivity();
 });

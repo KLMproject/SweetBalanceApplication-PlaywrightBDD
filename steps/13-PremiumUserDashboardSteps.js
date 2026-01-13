@@ -19,15 +19,11 @@ Given('the user is logged in to Homepage', async ({page}) => {
     lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton(); 
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
 
-    // loginobj = new login(page);
-     // await loginobj.launchApp();
-      //await loginobj.loginStandard();
       dash = new Dashboard(page);
        var mood="feeling happy today";
 
@@ -97,11 +93,11 @@ Given('the user is in Dashboard page', async ({page}) => {
    lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+   
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
       dash = new Dashboard(page);
      mood="feeling happy today";
   // Step: Given the user is in Dashboard page
@@ -226,11 +222,11 @@ Given('User is in premium subscription dialog box', async ({page}) => {
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   dash=new Dashboard(page);
   // Step: Given User is in premium subscription dialog box
   // From: features\PremiumUserDashBoard.feature:100:2
@@ -315,11 +311,11 @@ Given('User has not logged any weekly checks for the current week', async ({page
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+  
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   dash=new Dashboard(page);
   // Step: Given User has not logged any weekly checks for the current week
   // From: features\PremiumUserDashBoard.feature:142:2
@@ -342,11 +338,11 @@ Given('User has logged multiple weekly checks for the current week', async ({pag
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   // Step: Given User has logged multiple weekly checks for the current week
   // From: features\PremiumUserDashBoard.feature:147:2
 });
@@ -365,11 +361,10 @@ Given('User has not logged any exercise minutes for the current week', async ({p
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   dash= new Dashboard(page);
   // Step: Given User has not logged any exercise minutes for the current week
   // From: features\PremiumUserDashBoard.feature:152:2
@@ -385,11 +380,11 @@ Given('User has logged exercise minutes for the week', async ({page}) => {
  lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   // Step: Given User has logged exercise minutes for the week
   // From: features\PremiumUserDashBoard.feature:157:2
 });
@@ -408,11 +403,11 @@ Given('User has not logged any medication adherence for the current week', async
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   dash=new Dashboard(page);
   // Step: Given User has not logged any medication adherence for the current week     
   // From: features\PremiumUserDashBoard.feature:162:2
@@ -428,11 +423,11 @@ Given('User has logged medication adherence for the current week', async ({page}
   lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   // Step: Given User has logged medication adherence for the current week
   // From: features\PremiumUserDashBoard.feature:167:2
 });
@@ -446,11 +441,11 @@ Given('User has not logged Carb goals for the week', async ({page}) => {
    lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+
+       await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   dash=new Dashboard(page);
   // Step: Given User has not logged Carb goals for the week
   // From: features\PremiumUserDashBoard.feature:172:2
@@ -477,11 +472,11 @@ Given('User has health data for the last {int} days', async ({page}, arg) => {
  lp = new loginpage(page);
       await lp.navigatetoapplicationpage(process.env.APP_URL);
       await lp.clickonloginlink();
-      const user = await reader.getLogin();
-  await lp.enteremail(user.VALID_EMAIL);
-  await lp.clickcontinuewithemailbutton();
-   await lp.enterPassword(user.PASSWORD);
-  await lp.clickSigninButton();
+
+         await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
   dash=new Dashboard(page);
   // Step: Given User has health data for the last 7 days
   // From: features\PremiumUserDashBoard.feature:184:2

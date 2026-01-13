@@ -1,5 +1,4 @@
 import { createBdd } from "playwright-bdd";
-//import { Login } from "../pom/launchpom.js";
 import { loginpage } from '../pages/Login.js'
 import { expect } from '@playwright/test';
 import { Premium2 } from "../pages/09-PremiumUserHomePagePom2.js";
@@ -10,14 +9,10 @@ const reader = new ExcelReader();
      const lp = new loginpage(page);
         await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
-        const user = await reader.getLogin();
-        await lp.enteremail(user.VALID_EMAIL);
-        await lp.clickcontinuewithemailbutton();
-       
-        await lp.enterPassword(user.PASSWORD);
-        await lp.clickSigninButton(); 
-        
-  
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
 });
 
 When('User clicks meal section', async ({page}) => {
@@ -25,20 +20,14 @@ When('User clicks meal section', async ({page}) => {
   
  // await loginobj.typeEmail(process.env.VALID_EMAIL);
 
-  
-
 });
 
 Then('User should see {string} title', async ({page}, arg) => {
     const premiumobj = new Premium2(page);
     await premiumobj.checkTitle();
-   // await premiumobj.checkTitleLunch();
-   //const preMealHeading = this.page.locator('h3').first();
-   // await expect(preMealHeading).toHaveText(arg);
 });
 
 Then('User should see alarm clock icon', async ({page}) => {
-9 //const premiumobj = new Premium2(page);
   const premiumobj = new Premium2(page);
   await premiumobj.checkTitle();
 });
@@ -63,7 +52,6 @@ Then('User should get pdf download of weekly plan', async ({page}) => {
 
 When('User clicks on Blood glucose button', async ({page}) => {
       
-
      const premiumobj = new Premium2(page);
      await premiumobj.checkBlood();
 });
@@ -119,19 +107,18 @@ Then('User should redirected to dashboard page', async ({page}) => {
 
 Given('User is in dashboard page', async ({page}) => {
   
-        const user = await reader.getLogin();
+       
       const lp = new loginpage(page);
             await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
-        await lp.enteremail(user.VALID_EMAIL);
-        await lp.clickcontinuewithemailbutton();
-        await lp.enterPassword(user.PASSWORD);
-         await lp.clickSigninButton(); 
+        await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();
+
      const premiumobj = new Premium2(page);
      await premiumobj.checkLog();
      await premiumobj.verifyDashboardURL();
-    //const premiumobj = new Premium2(page); 
-    //await premiumobj.gotoDashboard();
     
 });
 
