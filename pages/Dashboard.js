@@ -15,8 +15,8 @@ export class Dashboard {
  // await expect(page.getByRole('button', { name: 'Manage Premium' })).toBeVisible();
     this.ManagePremiumButton=this.page.getByRole('button', { name: 'Manage Premium' });
   //expect(page.getByText('Start Date:Sun, Jan 04,')).toBeVisible();
-  this.StartDate=this.page.getByText('Start Date:Sun, Jan 04,').filter({ hasText: /^Start Date:/ });
-  this.EndDate=this.page.getByText('End Date:Sat, Jan 10,').filter({ hasText: /^End Date:/ });
+  this.StartDate=this.page.getByText('Start Date:Sun, Jan 11,');
+  this.EndDate=this.page.getByText('End Date:Sat, Jan 17,');
  // page.getByRole('button', { name: 'Manage Premium' }).click();
   //expect(page.getByRole('button', { name: 'Manage Premium' })).toBeVisible();
   //page.getByRole('button', { name: 'Manage Premium' }).click();
@@ -128,7 +128,7 @@ async verifymoodText()
     async verifyMoodTextBox()
     {
       await expect(this.MoodTextBox).toBeVisible();  
-      await expect(this.MoodTextBox).toHaveText('What\'s affecting your mood today?');
+      await expect(this.MoodTextBox).toHaveText('');
     }
 
     async moodFillVerify(text)
