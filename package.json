@@ -9,7 +9,14 @@
     "test:freeUser": "npx bddgen && npx playwright test --grep @freeUserr",
     "test:subscription": "npx bddgen && npx playwright test --grep @subscription ",
     "test:upgrade": "npx bddgen && npx playwright test --grep @payment ",
-    "test:premiumUser": "npx bddgen && npx playwright test --grep @premiumuser "
+    "test:premiumUser": "npx bddgen && npx playwright test --grep @premiumuser ",
+    "run:launch1": "npx bddgen && npx playwright test --project=chromium --grep @launch --ui",
+     "run:launch": "npx bddgen && npx playwright test --project=chromium --grep @launch --reporter=html --ui",
+    "run:launch:debug": "npx bddgen && npx playwright test --project=chromium --grep @launch --debug",
+    "run:diabetesRiskAssessment:debug": "npx bddgen && npx playwright test --project=chromium --grep @diabetesRiskAssessment --debug",
+    "run:diabetesRiskAssessment": "npx bddgen && npx playwright test --project=chromium --grep @diabetesRiskAssessment --ui"
+
+   
   },
   "keywords": [],
   "author": "",
