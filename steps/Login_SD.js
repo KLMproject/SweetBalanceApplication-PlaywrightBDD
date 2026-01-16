@@ -1,4 +1,4 @@
-﻿import { loginpage } from '../pages/Login.js';
+﻿﻿﻿import { loginpage } from '../pages/Login.js';
 import { expect } from '@playwright/test';
 import { ExcelReader } from '../utils/excelreader.js';
 import { createBdd } from 'playwright-bdd';
@@ -619,15 +619,3 @@ Then('User should be navigated to the {string} screen after loading personalised
   lp = new loginpage(page)
   await expect(page).toHaveURL("https://sweet-balance-test-env-3-numpyninjadiabe.replit.app/onboarding");
 });
-
-
-
-
-
-
- 
-
-
-
-
-

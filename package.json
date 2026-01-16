@@ -14,10 +14,11 @@
      "run:launch": "npx bddgen && npx playwright test --project=chromium --grep @launch --reporter=html --ui",
     "run:launch:debug": "npx bddgen && npx playwright test --project=chromium --grep @launch --debug",
     "run:diabetesRiskAssessment:debug": "npx bddgen && npx playwright test --project=chromium --grep @diabetesRiskAssessment --debug",
-    "run:diabetesRiskAssessment": "npx bddgen && npx playwright test --project=chromium --grep @diabetesRiskAssessment --ui"
+    "run:diabetesRiskAssessment": "npx bddgen && npx playwright test --project=chromium --grep @diabetesRiskAssessment --ui",
+    "run:commonFeatureForHomePage": "npx bddgen && npx playwright test --project=chromium --grep @homePageFreeUser --ui"
 
-   
-  },
+
+     },
   "keywords": [],
   "author": "",
   "license": "ISC",
