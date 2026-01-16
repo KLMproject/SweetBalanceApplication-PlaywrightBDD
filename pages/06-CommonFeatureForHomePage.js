@@ -46,6 +46,9 @@ this.avgBloodSugarUnit = this.avgBloodSugarCard.locator('div.text-sm.text-gray-5
 this.mealSectionButtons = page.locator('.flex.rounded-full button');
 this.mealCardsContainer = page.locator('.mt-6 .bg-gray-50');
 
+//locator for dish title (Pre-Breakfast, Lunch, Dinner, Snacks)
+  this.preMealDishTitle = page.locator('div.mt-6 h4.text-gray-900');
+
   }
 
 
@@ -453,7 +456,40 @@ async verifyExerciseIcon() {
     await expect(this.page.locator(`text=${buttonText}`)).toBeVisible();
   }
   
+
+ 
+  // Method to validate dish title is visible and return its text
+  async verifyAndGetDishTitle() {
+    // Ensure the dish title is visible
+    await expect(this.preMealDishTitle).toBeVisible({ timeout: 5000 });
+
+    // Get the text content
+    const text = await this.preMealDishTitle.textContent();
+
+    // Check that it’s not empty
+    if (!text || text.trim() === '') {
+      throw new Error('Dish title is empty!');
+    }
+
+    // Return the dish title text
+    return text.trim();
+  }
+
+
+  // Method to verify pre-meal item name is visible and get text
+  async verifyAndGetPreMealItemName() {
+    // Ensure the pre-meal item is visible
+    await expect(this.preMealItemName).toBeVisible({ timeout: 5000 });
+
+    // Get the text
+    const text = await this.preMealItemName.textContent();
+
+    // Check it’s not empty
+    if (!text || text.trim() === '') {
+      throw new Error('Pre-meal item name is empty!');
+    }
+
+    // Return the pre-meal item name
+    return text.trim();
+  }
 }
-
-
-
