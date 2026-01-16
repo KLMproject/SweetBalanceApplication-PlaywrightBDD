@@ -1,4 +1,4 @@
-import { LaunchPage } from '../pages/Launch.js';
+import { LaunchPage } from '../pages/01-Launch.js';
 import { expect } from '@playwright/test';
 import { ExcelReader } from '../utils/excelreader.js';
 import { createBdd } from 'playwright-bdd';

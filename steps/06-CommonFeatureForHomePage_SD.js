@@ -1,5 +1,5 @@
 import { expect } from '@playwright/test';
-import { CommonFeatureForHomePage } from '../pages/CommonFeatureForHomePage.js';
+import { CommonFeatureForHomePage } from '../pages/06-CommonFeatureForHomePage.js';
 import { createBdd } from 'playwright-bdd';
 import logger from '../utils/logger.js';
 import { ExcelReader } from '../utils/excelreader.js';
@@ -7,16 +7,14 @@ const reader = new ExcelReader();
 
 const { Given, When, Then } = createBdd();
 
-// Module-level POM instance
 let cfh;
-// let loginEmail;
+
 
 //SweetBalance text  on the left side of the page
 Then('User should see SweetBalance text on the left side of the page', async ({ page }) => {
-  // initialize POM if not already done
+  // initialize POM 
   cfh = cfh || new CommonFeatureForHomePage(page);
-  
-  // call the POM method
+
   await cfh.verifySweetBalanceText();
 });
 
@@ -246,4 +244,15 @@ Then('{string} details become visible with valid times', async ({}, sectionName)
   await cfh.assertMealCardsVisible();
   await cfh.validateAllMealTimes();
   console.log(`${sectionName} section meal times validated successfully`);
+});
+
+//Verify Today's meal plan for Breakfast section 
+
+
+Then('User should see dish title', async ({ page }) => {
+  cfh = cfh || new CommonFeatureForHomePage(page);
+
+  // Validate dish title and get text in one go
+  const dishTitle = await cfh.verifyAndGetDishTitle();
+  console.log('Dish title found:', dishTitle);
 });
