@@ -160,7 +160,7 @@ Then('All major sections are accessible with appropriate labels and alt texts', 
 });
 
 // Sticky navigation bar
-Then('User can access other sections without scrolling up', async ({}) => {
+Then('User can access other sections without scrolling up', async ({page}) => {
 await lp.validateStickyNavbar();
   logger.info('Navigation bar remains accessible while scrolling');
 });

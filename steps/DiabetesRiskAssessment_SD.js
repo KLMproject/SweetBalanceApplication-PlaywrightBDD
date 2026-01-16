@@ -14,7 +14,7 @@ const { Given, When, Then } = createBdd();
 let dra;
 let lp;
 
-When('User clicks {string} button', async ({page}) => {
+When('User clicks {string} button.', async ({page}) => {
   dra = new DiabetesRiskAssessmentPage(page);
   await dra.clickCheckYourRisk();
   logger.info('Clicked "Check Your Risk" button');
