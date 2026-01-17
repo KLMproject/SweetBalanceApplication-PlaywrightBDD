@@ -274,8 +274,8 @@ Then('User should See {string} button with red background and white text', async
 
 When('User clicks {string} button', async ({}, arg) => {
    await dash.navigateToDashboard();
-    await dash.ManagePremiumButton.click();
-   await dash.KeepPremiumButton.click();
+   await dash.ManagePremiumButton.click();
+  await dash.KeepPremiumButton.click();
   // Step: When User clicks "Keep Premium" button
   // From: features\PremiumUserDashBoard.feature:126:2
 });
@@ -288,7 +288,7 @@ Then('User should see success message {string}', async ({}, arg) => {
 
 When('User clicks {string} Cancel button', async ({}, arg) => {
    await dash.navigateToDashboard();
-   await dash.ManagePremiumButton.click();
+  // await dash.ManagePremiumButton.click();
   // Step: When User clicks "Cancel Premium" button
   // From: features\PremiumUserDashBoard.feature:131:2
 });
@@ -299,7 +299,7 @@ Then('User should see message {string}', async ({}, arg) => {
 });
 
 When ('User clicks {string} close button ', async ({}, arg) => {
-  await dash. CloseButton();
+  await dash.CloseButton();
   // Step: When User clicks "x" button 
   // From: features\PremiumUserDashBoard.feature:136:2
 });
@@ -333,7 +333,7 @@ When('User navigates to dashboard page', async ({}) => {
 });
 
 Then('User should see  {string}  displaying {string} with subtitle {string}', async ({}, arg, arg1, arg2) => {
-  await dash. WeeklyCheckVerify();
+  await dash.WeeklyCheckVerify();
   // Step: Then User should see  "Weekly Checks"  displaying "0" with subtitle "Total log entries per week"
   // From: features\PremiumUserDashBoard.feature:144:2
 });
@@ -419,6 +419,7 @@ Given('User has not logged any medication adherence for the current week', async
 });
 
 Then('User should see {string} displaying {string} with subtitle {string}', async ({}, arg, arg1, arg2) => {
+  await dash.navigateToDashboard();
   await dash.MedTextVerify()
   // Step: Then User should see "Med Adherence" displaying "0%" with subtitle "Needs improvement"
   // From: features\PremiumUserDashBoard.feature:164:2
@@ -457,6 +458,7 @@ Given('User has not logged Carb goals for the week', async ({page}) => {
 });
 
 Then('User should see carbs {string} displaying {string} with subtitle {string}', async ({}, arg, arg1, arg2) => {
+  await dash.navigateToDashboard();
   await dash.CarbsCheckVerify()
   // Step: Then User should see "Carb Goals" displaying "0%" with subtitle "Needs improvement"
   // From: features\PremiumUserDashBoard.feature:174:2

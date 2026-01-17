@@ -27,7 +27,7 @@ export class Dashboard {
   this.KeepPremiumButton=this.page.getByRole('button', { name: 'Keep Premium' });
     this.CancelPremiumButton=this.page.getByRole('button', { name: 'Cancel Premium' });
     this.KeepPremiumDialog=this.page.getByRole('dialog', { name: 'Are you sure you want to keep Premium?' });
-    this.WhatYoullLoseText=this.page.getByText('What you\'ll lose:•');
+    this.WhatYoullLoseText=this.page.getByRole('heading', { name: "What you'll lose:" })
     this.CloseButton=this.page.getByRole('button', { name: 'Close' });
     this.NotificationsButton=this.page.getByLabel('Notifications (F8)').getByRole('button').filter({ hasText: /^$/ });
     this.DialogCloseButton=this.page.getByRole('button', { name: 'Close' }).first();
@@ -47,7 +47,7 @@ export class Dashboard {
     this.energyLowText=this.page.getByText('Low', { exact: true });
     this.energyHighText=this.page.getByText('High', { exact: true });
     this.EmotionalButton=this.page.getByRole('button', { name: 'Log Emotional State' });
-    this.EmotionalDialog=this.page.getByRole('status');
+    this.EmotionalDialog=this.page.getByRole('status').filter({ hasText: /Emotional Status Logged/ })
     this.CancelPremiumDialog=this.page.getByRole('status').filter({hasText:/ Subscription Cancelled /})
 //premiumchecks
     this.WeeklyChecks=this.page.getByText('0', { exact: true });
@@ -197,14 +197,18 @@ async verifymoodText()
     }}
       async clickEmotionalButton()
       {
+         //await this.ManagePremiumButton.click();
         await this.EmotionalButton.click();
       }
       async verifyEmotionalDialog()
+
       {
+         await this.ManagePremiumButton.click();
         await expect(this.EmotionalDialog).toBeVisible();  
       } 
       async closeEmotionalDialog()
       {
+         //await this.ManagePremiumButton.click();
         await this.DialogCloseButton.click();
       }
 
@@ -212,12 +216,23 @@ async verifymoodText()
 
       async PremiumDialogVerify()
       {
-        await expect(this.WhatYoullLoseText).toHaveText("What You'll lose");
+         await this.ManagePremiumButton.click();
+       await expect(this.WhatYoullLoseText).toBeVisible();
+       const items = [
+  'Personalized meal plans tailored to your health goals',
+  'Advanced analytics and blood sugar insights',
+  'Specialized diabetes management plans',
+  'Priority support and premium features'
+];
+
+for (const item of items) {
+  await expect(this.WhatYoullLoseText).toContainText(`${item}`);
+}
       }
 
       async PremiumButtonsVisible()
       {
-        await expect(this.ManagePremiumButton).click();
+        await this.ManagePremiumButton.click();
         await expect(this.KeepPremiumButton).toBeVisible;
         await expect(this.CancelPremiumButton).toBeVisible;
       }
@@ -227,15 +242,14 @@ async verifymoodText()
          await this.ManagePremiumButton.click();
         const cls = await this.KeepPremiumButton.getAttribute('class');
       //await expect(cls).toContain('bg- white');
-        await expect(this.KeepPremiumButton).toHaveCSS('rgb(255,99,132)');
-      
+        await expect(this.KeepPremiumButton).toHaveCSS('background-color','rgb(255, 255, 255)');      
       }
       async CancelPremiumColor()
       {
          await this.ManagePremiumButton.click();
         const cls = await this.CancelPremiumButton.getAttribute('class');
-      await expect(cls).toContain('bg- red');
-        await expect(this.CancelPremiumButton).toHaveCSS('rgb(255,99,132)');
+     // await expect(cls).toContain('bg- red');
+        await expect(this.CancelPremiumButton).toHaveCSS('background-color','rgb(239,68,68)'); 
       }
 
       async KeepPremiumVerify()
@@ -258,7 +272,8 @@ async verifymoodText()
       }
      async PremiumDialog()
     {
-      await expect(this.ManagePremiumDialog).toHaveText("Are you sure you want to cancel your premium subscription? You'll continue to have access to premium features until the end of your current billing period.'")
+      await this.ManagePremiumButton.click(); 
+      await expect(this.ManagePremiumDialog).toContainText(/Are you sure you want to cancel your premium subscription? You'll continue to have access to premium features until the end of your current billing period/)
     }
 
     //Tracking onPRemium Dashboard
