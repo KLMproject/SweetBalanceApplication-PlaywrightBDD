@@ -12,9 +12,14 @@ Given('User logs in to home page', async ({page}) => {
 const lp = new loginpage(page);
           await lp.navigatetoapplicationpage(process.env.APP_URL);
           await lp.clickonloginlink();
-        await lp.enteremail(process.env.USER_EMAIL);  
+       /* await lp.enteremail(process.env.USER_EMAIL);  
         await lp.clickcontinuewithemailbutton()
         await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
+        const user = await reader.getLogin();
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
         await lp.clickSigninButton();
 });
 

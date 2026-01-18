@@ -314,7 +314,8 @@ Given('User is in step {int} onboarding process', async ({page}, arg) => {
 });
 When('User clicks continue after filling form', async ({page}) => {
   lp = new loginpage(page)
-  await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+  await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -325,7 +326,8 @@ Then('Page should display title Pick your pace chill stroll or marathon magic', 
 });
 When('User views subtitle', async ({page}) => {
   lp = new loginpage(page)
-   await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+   await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -337,7 +339,8 @@ Then('Page should display Select your preferred exercise intensity level', async
 });
 When('User views navigation buttons', async ({page}) => {
   lp = new loginpage(page)
-   await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+   await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -349,7 +352,8 @@ Then('Back button should be visible', async ({page}) => {
 });
 When('User views progress bar', async ({page}) => {
   lp = new loginpage(page)
-  await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+  await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -365,7 +369,8 @@ Then('User should see Easy Medium and Hard', async ({page}) => {
 });
 When('User selects an intensity option', async ({page}) => {
   lp = new loginpage(page)
-  await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+  await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -377,7 +382,8 @@ Then('User should navigate to step {int}', async ({page}, arg) => {
 });
 When('User views heading', async ({page}) => {
   lp = new loginpage(page)
-  await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+  await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -399,7 +405,8 @@ Then('User should see All inclusive diet Vegetarian and Vegan', async ({page}) =
 When('User selects dietary preference', async ({page}) => {
   lp = new loginpage(page)
   //const user = await reader.getNextUser();
-  await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+  await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -420,7 +427,8 @@ Then('User should see Indian American Continental Mediterranean Asian Middle Eas
 });
 When('User selects food passport', async ({page}) => {
   lp = new loginpage(page)
-  await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+  await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -448,7 +456,8 @@ Then('Submit button should be visible', async ({page}) => {
 });
 When('User selects one allergy and clicks submit', async ({page}) => {
   lp = new loginpage(page)
-  await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+  await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -464,7 +473,8 @@ Then('User should navigate to subscription details', async ({page}) => {
 });
 When('User selects multiple allergies and clicks submit', async ({page}) => {
   lp = new loginpage(page)
-  await lp.fillallthefields(process.env.AGE,process.env.HEIGHT,process.env.WEIGHT)
+  const user = await reader.getProfileWithBR();
+  await lp.fillallthefields(user.AGE,user.HEIGHT,user.WEIGHT)
   await lp.clickgenderoption();
   await lp.selectMaleGender();
   await lp.clickStep1ConBtn();
@@ -500,11 +510,11 @@ Then('User navigates to Step {int}', async ({page}, arg) => {
   lp = new loginpage(page)
   //await lp.clickStepThroughButton();
    const user = await reader.getProfileWithoutBR();
-  await lp.enteremail(user.VALID_NEW_EMAIL);//'testuserabv@example.com'
+  await lp.enteremail(user.VALID_NEW_EMAIL);
   await lp.clickcontinuewithemailbutton();
-  await lp.enterFullName(user.FULLNAME);//'TestUserabv'
-  await lp.enterUserNameInputField(user.USERNAME);//'TestUserabv'
-  await lp.enterProfilePasswordInputField(user.PROFILE_PASSWORD);//'Passw0rd!0abv'
+  await lp.enterFullName(user.FULLNAME);
+  await lp.enterUserNameInputField(user.USERNAME);
+  await lp.enterProfilePasswordInputField(user.PROFILE_PASSWORD);
   await lp.clickTermsCheckbox(); 
   await lp.clickCreateAccountButton();
   await lp.clickStepThroughButton();

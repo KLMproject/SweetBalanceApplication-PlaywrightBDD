@@ -10,14 +10,21 @@ const reader = new ExcelReader();
    const lp = new loginpage(page);
     await lp.navigatetoapplicationpage(process.env.APP_URL);
     await lp.clickonloginlink();
-    await lp.enteremail(process.env.USER_EMAIL);  
-    await lp.clickcontinuewithemailbutton()
+    const user = await reader.getLogin();
+    await lp.enteremail(user.VALID_EMAIL);
+    await lp.clickcontinuewithemailbutton();
+
+   /* await lp.enteremail(process.env.USER_EMAIL);  
+    await lp.clickcontinuewithemailbutton() */
 });
 
 When('User clicks sign in after entering password', async ({page}) => {
  const lp = new loginpage(page)
-  await lp.enterPassword(process.env.USER_PASSWORD);
+ const user = await reader.getLogin();
+ await lp.enterPassword(user.PASSWORD);
   await lp.clickSigninButton();
+/*  await lp.enterPassword(process.env.USER_PASSWORD);
+  await lp.clickSigninButton();*/
 });
 
 Then('User should see the navigation bar displaying items in the order {string}, {string}, {string}, {string}', async ({page}, arg, arg1, arg2, arg3) => {
