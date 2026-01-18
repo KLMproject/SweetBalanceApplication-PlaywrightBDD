@@ -61,6 +61,78 @@ Feature: Home Page Validation for Registered Users
   When User clicks on the "Snacks" section
   Then "Snacks" details become visible with valid times
 
+  Scenario: Verify Today's meal plan for Breakfast section 
+  When User clicks on the "Breakfast" section
+  Then User should see dish title
+  # # Then User should see the pre-meal item name
+  # # Then User should see the pre-meal calorie value
+  # # Then User should see indicator "AM" for breakfast pre-meal
+  # # Then User should see  "hh:mm" based time in pre-meal (eg : 1:00)
+  # # Then User should see 7'o clock
+  # # Then User should see green color for Carbs
+  # # Then User should see pink color for Protein
+  # # Then User should see purple color for Fat
+  # # Then measurement for Carbs should display the unit as "g"
+  # # Then measurement for Protein should display the unit as "g"
+  # # Then measurement for Fat should display the unit as "g"
+  # # Then User should see text "calories" after the calorie value in pre meal
+
+
+  Scenario: Verify Today's meal plan for Lunch section 
+  When User clicks on the "Lunch" section
+  Then User should see dish title
+  # # Then User should see the pre-meal item name
+  # # Then User should see the pre-meal calorie value
+  # # Then User should see indicator "AM" for breakfast pre-meal
+  # # Then User should see  "hh:mm" based time in pre-meal (eg : 1:00)
+  # # Then User should see 7'o clock
+  # # Then User should see green color for Carbs
+  # # Then User should see pink color for Protein
+  # # Then User should see purple color for Fat
+  # # Then measurement for Carbs should display the unit as "g"
+  # # Then measurement for Protein should display the unit as "g"
+  # # Then measurement for Fat should display the unit as "g"
+  # # Then User should see text "calories" after the calorie value in pre meal
+
+  Scenario: Verify Today's meal plan for Dinner section 
+  When User clicks on the "Dinner" section
+  Then User should see dish title
+  Then User should see the pre-meal item name
+  # # Then User should see the pre-meal calorie value
+  # # Then User should see indicator "AM" for breakfast pre-meal
+  # # Then User should see  "hh:mm" based time in pre-meal (eg : 1:00)
+  # # Then User should see 7'o clock
+  # # Then User should see green color for Carbs
+  # # Then User should see pink color for Protein
+  # # Then User should see purple color for Fat
+  # # Then measurement for Carbs should display the unit as "g"
+  # # Then measurement for Protein should display the unit as "g"
+  # # Then measurement for Fat should display the unit as "g"
+  # # Then User should see text "calories" after the calorie value in pre meal
+
+  Scenario: Verify Today's meal plan for Snacks section 
+  When User clicks on the "Snacks" section
+  Then User should see dish title
+  # # Then User should see the pre-meal item name
+  # # Then User should see the pre-meal calorie value
+  # # Then User should see indicator "AM" for breakfast pre-meal
+  # # Then User should see  "hh:mm" based time in pre-meal (eg : 1:00)
+  # # Then User should see 7'o clock
+  # # Then User should see green color for Carbs
+  # # Then User should see pink color for Protein
+  # # Then User should see purple color for Fat
+  # # Then measurement for Carbs should display the unit as "g"
+  # # Then measurement for Protein should display the unit as "g"
+  # # Then measurement for Fat should display the unit as "g"
+  # # Then User should see text "calories" after the calorie value in pre meal
+
+
+
+
+
+  
+
+
 
 
 
