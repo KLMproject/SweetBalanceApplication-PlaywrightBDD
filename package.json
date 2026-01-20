@@ -9,7 +9,14 @@
     "test:freeUser": "npx bddgen && npx playwright test --grep @freeUserr",
     "test:subscription": "npx bddgen && npx playwright test --grep @subscription ",
     "test:upgrade": "npx bddgen && npx playwright test --grep @payment ",
-    "test:premiumUser": "npx bddgen && npx playwright test --grep @premiumuser "
+    "test:premiumUser": "npx bddgen && npx playwright test --grep @premiumuser ",
+    "run:launch1": "npx bddgen && npx playwright test --project=chromium --grep @launch --ui",
+    "run:launchui": "npx bddgen && npx playwright test --project=chromium --grep @launch --reporter=html --ui",
+    "run:launch:debug": "npx bddgen && npx playwright test --project=chromium --grep @launch --debug",
+    "run:diabetesRiskAssessment:debug": "npx bddgen && npx playwright test --project=chromium --grep @diabetesRiskAssessment --debug",
+    "run:diabetesRiskAssessment": "npx bddgen && npx playwright test --project=chromium --grep @diabetesRiskAssessment --ui",
+    "run:commonFeatureForHomePage": "npx bddgen && npx playwright test --project=chromium --grep @homePageFreeUser --ui",
+    "run:launch": "bddgen && playwright test --project=chromium --grep @launch"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +26,8 @@
     "@cucumber/cucumber": "^12.5.0",
     "@playwright/test": "^1.57.0",
     "@types/node": "^25.0.3",
-    "allure-playwright": "^3.4.3",
+    "allure-playwright": "^3.4.5",
+    "multiple-cucumber-html-reporter": "^3.9.3",
     "playwright-bdd": "^8.4.2"
   },
   "dependencies": {

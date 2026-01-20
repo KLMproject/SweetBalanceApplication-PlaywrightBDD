@@ -146,5 +146,3 @@ Then('genericPaymentError message should be displayed', async ({upgradeToPremium
   // From: features\upgradeToPremium.feature:80:3
   await upgradeToPremiumPage.verifyErrorMessageForEmptyDate();
 });
-
-

@@ -17,17 +17,20 @@ Given('the user is in first Homepage', async ({page}) => {
          await lp.navigatetoapplicationpage(process.env.APP_URL);
          await lp.clickonloginlink();
          const user = await reader.getLogin();
-     await lp.enteremail(user.VALID_EMAIL);
-     await lp.clickcontinuewithemailbutton();
-      await lp.enterPassword(user.PASSWORD);
-     await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+       /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
      loginobj=new login (page);
      view=new BloodGlucoseLogViewPage(page);
  });
 
 
  When('the user navigates to logbook Page', async ({page}) => {
-  // const loginobj = new login(page);
    await loginobj.LogBookPage();
  });
 
@@ -68,10 +71,15 @@ Given('the User has not logged any blood glucose value in home page', async ({pa
        await lp.navigatetoapplicationpage(process.env.APP_URL);
        await lp.clickonloginlink();
        const user = await reader.getLogin();
-   await lp.enteremail(user.VALID_EMAIL);
-   await lp.clickcontinuewithemailbutton();
-    await lp.enterPassword(user.PASSWORD);
-   await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+
+  /* await lp.enteremail(process.env.USER_EMAIL);  
+   await lp.clickcontinuewithemailbutton()
+   await lp.enterPassword(process.env.USER_PASSWORD);
+   await lp.clickSigninButton();*/
    loginobj =new login(page);
    view=new BloodGlucoseLogViewPage (page)
 
@@ -97,10 +105,15 @@ Given('the User has not logged any nutrition value in home page', async ({page})
          await lp.navigatetoapplicationpage(process.env.APP_URL);
          await lp.clickonloginlink();
          const user = await reader.getLogin();
-     await lp.enteremail(user.VALID_EMAIL);
-     await lp.clickcontinuewithemailbutton();
-      await lp.enterPassword(user.PASSWORD);
-     await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+     
+   /*  await lp.enteremail(process.env.USER_EMAIL);  
+      await lp.clickcontinuewithemailbutton()
+      await lp.enterPassword(process.env.USER_PASSWORD);
+      await lp.clickSigninButton();*/
      loginobj =new login(page);
       view=new BloodGlucoseLogViewPage (page)
 });
@@ -119,10 +132,15 @@ Given('the User has not logged any physical activity value in home page', async 
        await lp.navigatetoapplicationpage(process.env.APP_URL);
        await lp.clickonloginlink();
        const user = await reader.getLogin();
-   await lp.enteremail(user.VALID_EMAIL);
-   await lp.clickcontinuewithemailbutton();
-    await lp.enterPassword(user.PASSWORD);
-   await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+
+      /*  await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
    loginobj =new login(page);
     view=new BloodGlucoseLogViewPage (page)
 });
@@ -141,10 +159,15 @@ Given('the User has not logged any medication dosage in home page', async ({page
          await lp.navigatetoapplicationpage(process.env.APP_URL);
          await lp.clickonloginlink();
          const user = await reader.getLogin();
-     await lp.enteremail(user.VALID_EMAIL);
-     await lp.clickcontinuewithemailbutton();
-      await lp.enterPassword(user.PASSWORD);
-     await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+     
+       /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
      loginobj =new login(page);
       view=new BloodGlucoseLogViewPage (page)
   // Step: Given the User has not logged any medication dosage in home page
@@ -165,10 +188,15 @@ Given('the User has logged blood glucose value in home page', async ({page}) => 
          await lp.navigatetoapplicationpage(process.env.APP_URL);
          await lp.clickonloginlink();
          const user = await reader.getLogin();
-     await lp.enteremail(user.VALID_EMAIL);
-     await lp.clickcontinuewithemailbutton();
-      await lp.enterPassword(user.PASSWORD);
-     await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+
+      /*  await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
      loginobj =new login(page);
       view=new BloodGlucoseLogViewPage (page)
   // Step: Given the User has logged blood glucose value in home page
@@ -187,10 +215,15 @@ Given('the User has logged nutrition value in home page', async ({page}) => {
          await lp.navigatetoapplicationpage(process.env.APP_URL);
          await lp.clickonloginlink();
          const user = await reader.getLogin();
-     await lp.enteremail(user.VALID_EMAIL);
-     await lp.clickcontinuewithemailbutton();
-      await lp.enterPassword(user.PASSWORD);
-     await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+      
+       /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
      loginobj =new login(page);
       view=new BloodGlucoseLogViewPage (page)
   // Step: Given the User has logged nutrition value in home page
@@ -209,10 +242,14 @@ Given('the User has logged physical activity value in home page', async ({page})
         await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
         const user = await reader.getLogin();
-    await lp.enteremail(user.VALID_EMAIL);
-    await lp.clickcontinuewithemailbutton();
-     await lp.enterPassword(user.PASSWORD);
-    await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+     /*  await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
     loginobj =new login(page);
      view=new BloodGlucoseLogViewPage (page)
   console.log("Inside Physical Activity Logged Values");
@@ -231,10 +268,15 @@ Given('the User has logged medication dosage value in home page', async ({page})
         await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
         const user = await reader.getLogin();
-    await lp.enteremail(user.VALID_EMAIL);
-    await lp.clickcontinuewithemailbutton();
-     await lp.enterPassword(user.PASSWORD);
-    await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+      
+       /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
     loginobj =new login(page);
      view=new BloodGlucoseLogViewPage (page)
   console.log("Inside Medication Logged Values");
@@ -257,10 +299,14 @@ Then('User should see the logged medication dosage values for the respective dat
          await lp.navigatetoapplicationpage(process.env.APP_URL);
          await lp.clickonloginlink();
          const user = await reader.getLogin();
-     await lp.enteremail(user.VALID_EMAIL);
-     await lp.clickcontinuewithemailbutton();
-      await lp.enterPassword(user.PASSWORD);
-     await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+    /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton(); */
      loginobj =new login(page);
    view = new BloodGlucoseLogViewPage(page);
  });
@@ -340,10 +386,15 @@ Given('the User has not logged any meals in home page', async ({page}) => {
        await lp.navigatetoapplicationpage(process.env.APP_URL);
        await lp.clickonloginlink();
        const user = await reader.getLogin();
-   await lp.enteremail(user.VALID_EMAIL);
-   await lp.clickcontinuewithemailbutton();
-    await lp.enterPassword(user.PASSWORD);
-   await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+   
+       /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
    loginobj =new login(page);
   view = new BloodGlucoseLogViewPage(page);
 });
@@ -437,10 +488,15 @@ Given('the User in home page', async ({page}) => {
         await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
         const user = await reader.getLogin();
-    await lp.enteremail(user.VALID_EMAIL);
-    await lp.clickcontinuewithemailbutton();
-     await lp.enterPassword(user.PASSWORD);
-    await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+    
+       /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
   view = new BloodGlucoseLogViewPage(page);
 });
 
@@ -476,10 +532,15 @@ Given('the User has not scheduled any medication in home page', async ({page}) =
         await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
         const user = await reader.getLogin();
-    await lp.enteremail(user.VALID_EMAIL);
-    await lp.clickcontinuewithemailbutton();
-     await lp.enterPassword(user.PASSWORD);
-    await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+
+        /*await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
   view = new BloodGlucoseLogViewPage(page);
   // Step: Given the User has not scheduled any medication in home page    
   // From: features\PremiumUserLogBloodGlucose.feature:193:6
@@ -531,11 +592,15 @@ Given('User has taken the scheduled dose for a day', async ({page}) => {
   loginobj =new login(page);
         await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
+       /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
         const user = await reader.getLogin();
-    await lp.enteremail(user.VALID_EMAIL);
-    await lp.clickcontinuewithemailbutton();
-     await lp.enterPassword(user.PASSWORD);
-    await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
   view = new BloodGlucoseLogViewPage(page);
 });
 
@@ -574,10 +639,15 @@ Given('the User is in home page for physical activity', async ({page}) => {
        await lp.navigatetoapplicationpage(process.env.APP_URL);
        await lp.clickonloginlink();
        const user = await reader.getLogin();
-   await lp.enteremail(user.VALID_EMAIL);
-   await lp.clickcontinuewithemailbutton();
-    await lp.enterPassword(user.PASSWORD);
-   await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+      
+      /*  await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
   view = new BloodGlucoseLogViewPage(page);
 });
 
@@ -641,10 +711,15 @@ Given('the User has not logged any physical activity in home page', async ({page
         await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
         const user = await reader.getLogin();
-    await lp.enteremail(user.VALID_EMAIL);
-    await lp.clickcontinuewithemailbutton();
-     await lp.enterPassword(user.PASSWORD);
-    await lp.clickSigninButton();
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+      
+       /* await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
   // Step: Given the User has not logged any physical activity in home page
   // From: features\PremiumUserLogBloodGlucose.feature:286:6
 });
@@ -677,10 +752,15 @@ Given('the User has logged physical activity in home page', async ({page}) => {
         await lp.navigatetoapplicationpage(process.env.APP_URL);
         await lp.clickonloginlink();
         const user = await reader.getLogin();
-    await lp.enteremail(user.VALID_EMAIL);
-    await lp.clickcontinuewithemailbutton();
-     await lp.enterPassword(user.PASSWORD);
-    await lp.clickSigninButton(); 
+        await lp.enteremail(user.VALID_EMAIL);
+        await lp.clickcontinuewithemailbutton();
+        await lp.enterPassword(user.PASSWORD);
+        await lp.clickSigninButton();
+      
+      /*  await lp.enteremail(process.env.USER_EMAIL);  
+        await lp.clickcontinuewithemailbutton()
+        await lp.enterPassword(process.env.USER_PASSWORD);
+        await lp.clickSigninButton();*/
 });
 
 Then('user should see the bars  displayed only for days with logged activity', async ({}) => {

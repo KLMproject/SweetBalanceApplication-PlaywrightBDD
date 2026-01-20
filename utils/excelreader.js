@@ -97,4 +97,25 @@ export class ExcelReader {
     await this.loadSheets();
     return this.profileWithoutBR;
   }
+
+
+async getDiabetesRiskData(rowNumber) {
+  const workbook = new ExcelJS.Workbook();
+  await workbook.xlsx.readFile(this.filePath);
+
+  const sheet = workbook.getWorksheet('DiabetesRisk');
+  if (!sheet) throw new Error(`Sheet "DiabetesRisk" not found in ${this.filePath}`);
+
+  const row = sheet.getRow(rowNumber);
+  const [_, Age, Weight, PhysicalActivity, BloodPressure, DietQuality, FamilyHistory] = row.values;
+
+  return {
+    age: Age ?? '', // if empty, send empty string
+    weight: Weight ?? '',
+    activity: PhysicalActivity ?? '',
+    bloodPressure: BloodPressure ?? '',
+    diet: DietQuality ?? '',
+    familyHistory: FamilyHistory ?? ''
+  };
+}
 }
